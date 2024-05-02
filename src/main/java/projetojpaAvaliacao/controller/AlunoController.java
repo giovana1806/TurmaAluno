@@ -69,6 +69,10 @@ public class AlunoController {
 	public List<Aluno> findAlunosPorNomeCompletoLike(@PathVariable String nomeCompleto){
 		return alunoService.findByNomeCompletoLike(nomeCompleto);
 	}
+	@GetMapping("/turma/{turmaId}")
+	public List<Aluno> findAlunosPorTurma(@PathVariable Long turmaId){
+		return alunoService.findByTurmaId(turmaId);
+	} 
 	@PostMapping("/")   
 	public ResponseEntity<Aluno> salvaAlunosControl(@RequestBody Aluno aluno){   
 		Aluno salvaAluno = alunoService.salvaAluno(aluno);   

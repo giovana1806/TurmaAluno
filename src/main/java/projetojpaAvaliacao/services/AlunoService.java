@@ -41,6 +41,9 @@ public class AlunoService {
 	public List<Aluno> findByNomeCompletoLike(String nomeCompleto){
 		return alunoRepository.findByNomeLike(nomeCompleto);
 	}
+	public List<Aluno>findByTurmaId(Long turmaId){
+		return alunoRepository.findByTurmaId(turmaId);
+	}
 	public Aluno salvaAluno(Aluno aluno) {     
 		return alunoRepository.save(aluno);     
 	}    

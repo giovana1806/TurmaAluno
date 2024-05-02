@@ -18,5 +18,7 @@ public interface AlunoRepository extends JpaRepository<Aluno,Long>{
 	List<Aluno>findByNome(@Param("nome") String nome);
 	@Query("SELECT a FROM Aluno a WHERE a.nomeCompleto LIKE :nomeCompleto")
 	List<Aluno>findByNomeLike(@Param("nomeCompleto") String nomeCompleto);
+	@Query("SELECT a FROM Aluno a JOIN a.turma t WHERE t.id = :turmaId")
+	List<Aluno>findByTurmaId(@Param("turmaId") Long turmaId);
 	
 }
